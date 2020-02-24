@@ -1,5 +1,7 @@
 <template>
-  <div class="image" />
+  <div class="wrapper">
+    <div class="image" />
+  </div>
 </template>
 
 <script>
@@ -9,6 +11,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.wrapper {
+  width: 100%;
+  position: fixed;
+  z-index: -5;
+  top: 0;
+  left: 0;
+}
 .image {
   position: fixed;
   top: 0;

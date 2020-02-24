@@ -28,7 +28,7 @@ export default {
   left: 0;
 }
 .innerWrapper {
-  background: rgba(0,0,0,0.5);
+  background: rgba(0,0,0,0.3);
   display: flex;
   padding: 25px;
   justify-content: center;
