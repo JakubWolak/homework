@@ -2,7 +2,7 @@
   <nav>
     <ul>
       <button>🞬</button>
-      <li><a class="header" href="#">Maturka</a></li>
+      <navbar-header :title="'Maturka'" :href="'#'"></navbar-header>
       <navbar-item
         v-for="item in links"
         :key="item.text"
@@ -13,11 +13,12 @@
 </template>
 
 <script>
+import NavbarHeader from "@/components/Navbar/NavbarHeader";
 import NavbarItem from "@/components/Navbar/NavbarItem";
 
 export default {
   name: "Navbar",
-  components: { NavbarItem },
+  components: { NavbarItem, NavbarHeader },
   data: () => {
     return {
       links: [
