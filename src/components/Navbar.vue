@@ -1,6 +1,7 @@
 <template>
   <nav>
     <ul>
+      <button>🞬</button>
       <li><a class="header" href="#">Maturka</a></li>
       <li><a href="#">Dupa</a></li>
       <li><a href="#">Dupa</a></li>
@@ -48,10 +49,14 @@ a:hover {
   background-color: lighten($backgroundColor, 25%);
 }
 
+button {
+  display: none;
+}
+
 @media only screen and (max-width: 678px) {
   ul {
     flex-direction: column;
-    padding: 10px 0;
+    padding: 0 10px 0;
   }
 
   li {
@@ -60,6 +65,17 @@ a:hover {
 
   a {
     display: block;
+  }
+
+  button {
+    align-self: flex-end;
+    display: block;
+    padding: 1.25vh;
+    font-size: 18px;
+    border: none;
+    background-color: darken($backgroundColor, 9%);
+    outline: none;
+    cursor: pointer;
   }
 }
 </style>
