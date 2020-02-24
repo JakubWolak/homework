@@ -16,7 +16,7 @@ export default {
   width: 100%;
   min-height: 100vh;
   background-image: url('../assets/background.jpg');
-  background-position: 10% 70%;
+  background-position: 15% 70%;
   background-repeat: no-repeat;
   background-size: cover;
 }
