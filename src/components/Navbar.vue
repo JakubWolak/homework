@@ -1,13 +1,15 @@
 <template>
   <nav>
     <ul>
-      <button>🞬</button>
+      <navbar-button @buttonClicked="drawer = $event"></navbar-button>
       <navbar-header :title="'Maturka'" :href="'#'"></navbar-header>
-      <navbar-item
-        v-for="item in links"
-        :key="item.text"
-        :item="item"
-      ></navbar-item>
+      <div v-if="drawer">
+        <navbar-item
+          v-for="item in links"
+          :key="item.text"
+          :item="item"
+        ></navbar-item>
+      </div>
     </ul>
   </nav>
 </template>
@@ -15,12 +17,14 @@
 <script>
 import NavbarHeader from "@/components/Navbar/NavbarHeader";
 import NavbarItem from "@/components/Navbar/NavbarItem";
+import NavbarButton from "@/components/Navbar/NavbarButton";
 
 export default {
   name: "Navbar",
-  components: { NavbarItem, NavbarHeader },
+  components: { NavbarItem, NavbarHeader, NavbarButton },
   data: () => {
     return {
+      drawer: true,
       links: [
         {
           text: "Dupa",
@@ -52,25 +56,10 @@ ul {
   padding: calc(10px + 0.5rem);
 }
 
-button {
-  display: none;
-}
-
 @media only screen and (max-width: 678px) {
   ul {
     flex-direction: column;
     padding: 0 10px 0;
-  }
-
-  button {
-    align-self: flex-end;
-    display: block;
-    padding: 1.25vh;
-    font-size: 18px;
-    border: none;
-    background-color: darken($backgroundColor, 9%);
-    outline: none;
-    cursor: pointer;
   }
 }
 </style>
