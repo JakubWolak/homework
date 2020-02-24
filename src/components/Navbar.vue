@@ -3,17 +3,35 @@
     <ul>
       <button>🞬</button>
       <li><a class="header" href="#">Maturka</a></li>
-      <li><a href="#">Dupa</a></li>
-      <li><a href="#">Dupa</a></li>
-      <li><a href="#">Dupa</a></li>
-      <li><a href="#">Dupa</a></li>
+      <navbar-item
+        v-for="item in links"
+        :key="item.text"
+        :item="item"
+      ></navbar-item>
     </ul>
   </nav>
 </template>
 
 <script>
+import NavbarItem from "@/components/Navbar/NavbarItem";
+
 export default {
-  name: "Navbar"
+  name: "Navbar",
+  components: { NavbarItem },
+  data: () => {
+    return {
+      links: [
+        {
+          text: "Dupa",
+          href: "#"
+        },
+        {
+          text: "Dupa2",
+          href: "#"
+        }
+      ]
+    };
+  }
 };
 </script>
 
@@ -33,22 +51,6 @@ ul {
   padding: calc(10px + 0.5rem);
 }
 
-li {
-  list-style-type: none;
-  margin: 0 0.6vw;
-  font-size: 18px;
-}
-
-a {
-  text-decoration: none;
-  color: black;
-  padding: calc(3px + 0.68vw);
-}
-
-a:hover {
-  background-color: lighten($backgroundColor, 25%);
-}
-
 button {
   display: none;
 }
@@ -57,14 +59,6 @@ button {
   ul {
     flex-direction: column;
     padding: 0 10px 0;
-  }
-
-  li {
-    margin: 3.75px 0 0 0;
-  }
-
-  a {
-    display: block;
   }
 
   button {
