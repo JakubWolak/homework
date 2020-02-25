@@ -2,7 +2,7 @@
   <nav>
     <ul>
       <navbar-button @buttonClicked="drawer = $event"></navbar-button>
-      <navbar-header :title="'Maturka'" :href="'#'"></navbar-header>
+      <navbar-header :title="'Maturka'" :href="'/'"></navbar-header>
       <div v-if="drawer">
         <navbar-item
           v-for="item in links"
@@ -31,7 +31,7 @@ export default {
         },
         {
           text: "Dupa2",
-          href: "#"
+          href: "/Timer"
         }
       ]
     };
