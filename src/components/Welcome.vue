@@ -37,7 +37,6 @@ export default {
 .welcomeText {
   padding: 0;
   margin: 0;
-  font-family: "Teko", serif;
   font-size: 80px;
 }
 .shortDescription {

@@ -118,12 +118,12 @@ export default {
 }
 .message {
   height: 60px;
-  font-size: 14px;
+  font-size: 25px;
   font-weight: 800;
   margin-top: 5px;
   margin-left: 20px;
   text-align: center;
-  vertical-align: 80%;
+  vertical-align: 100%;
 }
 .status-tag {
   width: 270px;
@@ -132,10 +132,10 @@ export default {
   font-weight: 600;
   color: #000;
   text-align: center;
-  border-radius: 15px;
+  border-radius: 4px;
 
   &.upcoming {
-    background-color: lightGreen;
+    background-color: rgba(20, 220, 20, 0.6);
   }
   &.running {
     background-color: gold;
