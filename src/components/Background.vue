@@ -1,23 +1,32 @@
 <template>
-  <div class="image" />
+  <div class="wrapper">
+    <div class="image" />
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'Background',
+  name: "Background"
 };
 </script>
 
 <style lang="scss" scoped>
-.image{
+.wrapper {
+  width: 100%;
+  position: fixed;
+  z-index: -5;
+  top: 0;
+  left: 0;
+}
+.image {
   position: fixed;
   top: 0;
   z-index: -1;
   width: 100%;
   min-height: 100vh;
-  background-image: url('../assets/background.jpg');
-  background-size: cover;
+  background-image: url("../assets/background.jpg");
+  background-position: 15% 70%;
   background-repeat: no-repeat;
-  background-position: 60% 0;
+  background-size: cover;
 }
 </style>
