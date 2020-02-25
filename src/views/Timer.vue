@@ -1,27 +1,31 @@
 <template>
-  <div class="innerWrapper">
+  <div class="wrapper">
+    <TimerWrapper />
     <Background />
   </div>
 </template>
 
 <script>
 import Background from "@/components/Background.vue";
+import TimerWrapper from "@/components/TimerWrapper.vue";
 
 export default {
   name: "Timer",
   components: {
-    Background
+    Background,
+    TimerWrapper
   }
 };
 </script>
 
 <style lang="scss" scoped>
-.innerWrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin: 0;
-  padding: 0;
-  z-index: 5;
+  position: relative;
+  width: 100%;
+  justify-content: center;
 }
 </style>
