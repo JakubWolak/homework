@@ -25,7 +25,7 @@
               <span class="icon arrow"></span>
             </span>
             <span class="button-text" @click="buttonAlert">Zatrzymaj czas</span>
-          </button><VueSimpleAlert @click.prevent="buttonAlert" style="width:50px;height:50px;background:white;"/>
+          </button>
         </div>
     </div>
   </div>
@@ -33,13 +33,11 @@
 
 <script>
 import Timer from "@/components/Timer/Timer.vue";
-import VueSimpleAlert from "vue-simple-alert";
 
 export default {
   name: "TimerWrapper",
   components: {
     Timer,
-    VueSimpleAlert
   },
   data: function() {
     return {
