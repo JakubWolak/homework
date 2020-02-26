@@ -1,7 +1,7 @@
 <template>
   <button @click="handleClick()">
-    <span v-if="open">🞬</span>
-    <span v-else>☰</span>
+    <span v-if="closed">☰</span>
+    <span v-else>🞬</span>
   </button>
 </template>
 
@@ -10,13 +10,13 @@ export default {
   name: "NavbarButton",
   data: () => {
     return {
-      open: true
+      closed: true
     };
   },
   methods: {
     handleClick() {
-      this.open = !this.open;
-      this.$emit("buttonClicked", this.open);
+      this.closed = !this.closed;
+      this.$emit("buttonClicked", !this.closed);
     }
   }
 };

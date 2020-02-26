@@ -5,7 +5,7 @@
         <navbar-button @buttonClicked="drawer = $event"></navbar-button>
         <navbar-header :title="'Maturka'" :href="'#'"></navbar-header>
       </div>
-      <div class="drawer" v-if="drawer">
+      <div class="drawer" :class="{ mobileHidden: !drawer }">
         <navbar-item
           v-for="item in links"
           :key="item.text"
@@ -74,6 +74,10 @@ ul {
   ul {
     flex-direction: column;
     padding: 5px;
+  }
+
+  .mobileHidden {
+    display: none;
   }
 }
 </style>
