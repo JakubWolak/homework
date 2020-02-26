@@ -1,19 +1,11 @@
 <template>
-
   <div class="home">
     <Background />
     <Welcome />
-
-  <div>
-    <Welcome />
-    <Background />
-
   </div>
 </template>
 
 <script>
-
-
 // @ is an alias to /src
 
 import Background from "@/components/Background.vue";
