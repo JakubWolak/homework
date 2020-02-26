@@ -12,8 +12,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-$backgroundColor: magenta;
-
 li {
   list-style-type: none;
   margin: 0 0.6vw;
@@ -21,7 +19,7 @@ li {
 }
 
 a:hover {
-  background-color: lighten($backgroundColor, 25%);
+  background-color: lighten($navbarColor, 25%);
 }
 
 a {

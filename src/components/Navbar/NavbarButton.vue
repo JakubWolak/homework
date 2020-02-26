@@ -23,8 +23,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$backgroundColor: magenta;
-
 button {
   display: none;
   grid-column: 3;
@@ -37,7 +35,7 @@ button {
     padding: 1.25vh;
     font-size: 18px;
     border: none;
-    background-color: darken($backgroundColor, 9%);
+    background-color: darken($navbarColor, 9%);
     outline: none;
     cursor: pointer;
   }

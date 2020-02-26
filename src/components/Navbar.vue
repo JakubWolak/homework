@@ -43,11 +43,9 @@ export default {
 </script>
 
 <style scoped lang="scss">
-$backgroundColor: magenta;
-
 nav {
   width: 100vw;
-  background-color: $backgroundColor;
+  background-color: $navbarColor;
   margin: 0 0 calc(20px + 1rem);
 }
 
