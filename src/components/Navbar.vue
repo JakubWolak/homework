@@ -26,7 +26,7 @@ export default {
   components: { NavbarItem, NavbarHeader, NavbarButton },
   data: () => {
     return {
-      drawer: true,
+      drawer: false,
       links: [
         {
           text: "Dupa",
