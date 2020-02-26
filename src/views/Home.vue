@@ -1,11 +1,21 @@
 <template>
+
   <div class="home">
     <Background />
     <Welcome />
+
+  <div>
+    <Welcome />
+    <Background />
+
   </div>
 </template>
 
 <script>
+
+
+// @ is an alias to /src
+
 import Background from "@/components/Background.vue";
 import Welcome from "@/components/Welcome.vue";
 
@@ -17,3 +27,9 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" scoped>
+* {
+  margin: 0;
+}
+</style>
