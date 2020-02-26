@@ -27,6 +27,7 @@ $backgroundColor: magenta;
 
 button {
   display: none;
+  grid-column: 3;
 }
 
 @media only screen and (max-width: 678px) {

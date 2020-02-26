@@ -1,19 +1,44 @@
 <template>
-  <navbar-item :item="{ text: title, href }" class="header"></navbar-item>
+  <li>
+    <a v-bind:href="href">{{ title }}</a>
+  </li>
 </template>
 
 <script>
-import NavbarItem from "@/components/Navbar/NavbarItem";
-
 export default {
   name: "NavbarHeader",
-  components: { NavbarItem },
   props: ["title", "href"]
 };
 </script>
 
 <style lang="scss" scoped>
-.header {
+$backgroundColor: magenta;
+
+li {
+  list-style-type: none;
+  margin: 0 0.6vw;
   font-size: 20px;
+  grid-column: 2;
+  grid-row: 1;
+}
+
+a:hover {
+  background-color: lighten($backgroundColor, 25%);
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+@media only screen and (max-width: 678px) {
+  li {
+    margin: none;
+    align-self: center;
+  }
+
+  a {
+    display: block;
+  }
 }
 </style>

@@ -1,9 +1,11 @@
 <template>
   <nav>
     <ul>
-      <navbar-button @buttonClicked="drawer = $event"></navbar-button>
-      <navbar-header :title="'Maturka'" :href="'#'"></navbar-header>
-      <div v-if="drawer">
+      <div class="navbar-header">
+        <navbar-button @buttonClicked="drawer = $event"></navbar-button>
+        <navbar-header :title="'Maturka'" :href="'#'"></navbar-header>
+      </div>
+      <div class="drawer" v-if="drawer">
         <navbar-item
           v-for="item in links"
           :key="item.text"
@@ -56,10 +58,24 @@ ul {
   padding: calc(10px + 0.5rem);
 }
 
+.drawer {
+  display: flex;
+}
+
 @media only screen and (max-width: 678px) {
-  ul {
+  .navbar-header {
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+  }
+
+  .drawer {
     flex-direction: column;
     padding: 0 10px 0;
+  }
+
+  ul {
+    flex-direction: column;
+    padding: 5px;
   }
 }
 </style>
