@@ -3,7 +3,7 @@
     <ul>
       <div class="navbar-header">
         <navbar-button @buttonClicked="drawer = $event"></navbar-button>
-        <navbar-header :title="'Maturka'" :href="'#'"></navbar-header>
+        <navbar-header :title="'Maturka'" :href="'/'"></navbar-header>
       </div>
       <div class="drawer" :class="{ mobileHidden: !drawer }">
         <navbar-item
@@ -30,7 +30,7 @@ export default {
       links: [
         {
           text: "Dupa",
-          href: "#"
+          href: "/Timer"
         },
         {
           text: "Dupa2",
@@ -44,6 +44,10 @@ export default {
 
 <style scoped lang="scss">
 nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
   width: 100vw;
   background-color: $navbarColor;
   margin: 0 0 calc(20px + 1rem);
