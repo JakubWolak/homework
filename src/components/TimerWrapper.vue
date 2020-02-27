@@ -2,7 +2,7 @@
   <div class="wrapper">
     <div class="innerWrapper">
       <h1 class="timer">{{ text }}</h1>
-      <Timer :trans="trans" :starttime="starttime" :endtime="endtime"></Timer>
+      <Timer :trans="trans" :start="starttime" :end="endtime"></Timer>
       <div id="container">
         <button class="learn-more">
           <span class="circle" aria-hidden="true">
@@ -18,8 +18,8 @@
 <script>
 import Timer from "@/components/Timer/Timer.vue";
 
-const starttime = "May 4, 2020 09:00:00";
-const endtime = "May 21, 2020 17:00:00";
+const starttime = new Date("May 4, 2020 09:00:00").getTime();
+const endtime = new Date("May 21, 2020 17:00:00").getTime();
 const trans = {
   day: "Dni",
   hours: "Godzin",
