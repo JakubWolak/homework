@@ -7,7 +7,7 @@
 
 <script>
 import Background from "@/components/Background.vue";
-import TimerWrapper from "@/components/TimerWrapper.vue";
+import TimerWrapper from "@/components/Timer/TimerWrapper.vue";
 
 export default {
   name: "Timer",
