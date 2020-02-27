@@ -2,31 +2,15 @@
   <div class="wrapper">
     <div class="innerWrapper">
       <h1 class="timer">{{ text }}</h1>
-      <Timer 
-          starttime="May 4, 2020 09:00:00" 
-          endtime="May 21, 2020 17:00:00" 
-          trans='{
-          "day":"Dni",
-          "hours":"Godzin",
-          "minutes":"Minut",
-          "seconds":"Sekund",
-          "expired":"Już po wszytkiemu :P",
-          "running":"Za późno na naukę, ośle",
-          "upcoming":"Ucz się póki możesz",
-          "status": {
-              "expired":"Matury zakończone",
-              "running":"Pisz, pisz",
-              "upcoming":"Już wkrótce początek"
-            }}'
-        ></Timer>
-        <div id="container">
-          <button class="learn-more">
-            <span class="circle" aria-hidden="true">
-              <span class="icon arrow"></span>
-            </span>
-            <span class="button-text" @click="buttonAlert">Zatrzymaj czas</span>
-          </button>
-        </div>
+      <Timer :trans="trans" :starttime="starttime" :endtime="endtime"></Timer>
+      <div id="container">
+        <button class="learn-more">
+          <span class="circle" aria-hidden="true">
+            <span class="icon arrow"></span>
+          </span>
+          <span class="button-text" @click="buttonAlert">Zatrzymaj czas</span>
+        </button>
+      </div>
     </div>
   </div>
 </template>
@@ -34,25 +18,43 @@
 <script>
 import Timer from "@/components/Timer/Timer.vue";
 
+const starttime = "May 4, 2020 09:00:00";
+const endtime = "May 21, 2020 17:00:00";
+const trans = {
+  day: "Dni",
+  hours: "Godzin",
+  minutes: "Minut",
+  seconds: "Sekund",
+  expired: "Już po wszytkiemu :P",
+  running: "Za późno na naukę, ośle",
+  upcoming: "Ucz się póki możesz",
+  status: {
+    expired: "Matury zakończone",
+    running: "Pisz, pisz",
+    upcoming: "Już wkrótce początek"
+  }
+};
+
 export default {
   name: "TimerWrapper",
   components: {
-    Timer,
+    Timer
   },
-  data: function() {
+  data: () => {
     return {
       text: "Czas do rozpoczęcia matur",
       buttonText: "Zatrzymaj czas",
-      alertText: "Ucz się ośle, nie kombinuj!"
-    }
+      alertText: "Ucz się ośle, nie kombinuj!",
+      starttime,
+      endtime,
+      trans
+    };
   },
   methods: {
-      buttonAlert() {
-        this.$alert(this.alertText).then(() =>
-      console.log("Closed")
-    );
-      }
+    buttonAlert() {
+      this.$alert(this.alertText).then(() => console.log("Closed"));
     }
+  }
 };
 </script>
 
@@ -78,13 +80,18 @@ $bg: #f3f8fa;
 $white: #fff;
 $black: #282936;
 
-@mixin transition($property: all, $duration: 0.45s, $ease: cubic-bezier(0.65,0,.076,1)) {
+@mixin transition(
+  $property: all,
+  $duration: 0.45s,
+  $ease: cubic-bezier(0.65, 0, 0.076, 1)
+) {
   transition: $property $duration $ease;
 }
 
 * {
   box-sizing: border-box;
-  &::before, &::after {
+  &::before,
+  &::after {
     box-sizing: border-box;
   }
 }
@@ -107,7 +114,7 @@ button {
     width: 16rem;
     height: auto;
     .circle {
-      @include transition(all, 0.45s, cubic-bezier(0.65,0,.076,1));
+      @include transition(all, 0.45s, cubic-bezier(0.65, 0, 0.076, 1));
       position: relative;
       display: block;
       margin: 0;
@@ -116,21 +123,21 @@ button {
       background: $black;
       border-radius: 1.625rem;
       .icon {
-        @include transition(all, 0.45s, cubic-bezier(0.65,0,.076,1));
+        @include transition(all, 0.45s, cubic-bezier(0.65, 0, 0.076, 1));
         position: absolute;
         top: 0;
         bottom: 0;
         margin: auto;
         background: $white;
         &.arrow {
-          @include transition(all, 0.45s, cubic-bezier(0.65,0,.076,1));
+          @include transition(all, 0.45s, cubic-bezier(0.65, 0, 0.076, 1));
           left: 0.625rem;
           width: 1.125rem;
           height: 0.125rem;
           background: none;
           &::before {
             position: absolute;
-            content: '';
+            content: "";
             top: -0.25rem;
             right: 0.0625rem;
             width: 0.625rem;
@@ -143,7 +150,7 @@ button {
       }
     }
     .button-text {
-      @include transition(all, 0.45s, cubic-bezier(0.65,0,.076,1));
+      @include transition(all, 0.45s, cubic-bezier(0.65, 0, 0.076, 1));
       position: absolute;
       top: 0;
       left: 0;
@@ -163,8 +170,8 @@ button {
       width: 100%;
       .icon {
         &.arrow {
-        background: $white;
-        transform: translate(1rem, 0);
+          background: $white;
+          transform: translate(1rem, 0);
         }
       }
     }
@@ -177,11 +184,11 @@ button {
 @supports (display: grid) {
   body {
     display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 0.625rem;
-  grid-template-areas: ". main main ." ". main main .";
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 0.625rem;
+    grid-template-areas: ". main main ." ". main main .";
   }
-  
+
   #container {
     grid-area: main;
     align-self: center;
