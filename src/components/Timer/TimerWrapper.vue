@@ -52,7 +52,7 @@ export default {
   },
   methods: {
     buttonAlert() {
-      this.$alert(this.alertText).then(() => console.log("Closed"));
+      this.$alert(this.alertText);
     }
   }
 };
