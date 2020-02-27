@@ -27,6 +27,7 @@ a:hover {
 a {
   text-decoration: none;
   color: black;
+  padding: calc(3px + 0.68vw);
 }
 
 @media only screen and (max-width: 678px) {
@@ -37,6 +38,7 @@ a {
 
   a {
     display: block;
+    padding: 3px;
   }
 }
 </style>

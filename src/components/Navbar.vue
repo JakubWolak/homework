@@ -6,11 +6,7 @@
         <navbar-header :title="'Maturka'" :href="'/'"></navbar-header>
       </div>
       <div class="drawer" :class="{ mobileHidden: !drawer }">
-        <navbar-item
-          v-for="item in links"
-          :key="item.text"
-          :item="item"
-        ></navbar-item>
+        <navbar-item v-for="item in links" :key="item.text" :item="item"></navbar-item>
       </div>
     </ul>
   </nav>
@@ -29,12 +25,8 @@ export default {
       drawer: false,
       links: [
         {
-          text: "Dupa",
+          text: "Odliczanie",
           href: "/Timer"
-        },
-        {
-          text: "Dupa2",
-          href: "#"
         }
       ]
     };
