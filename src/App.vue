@@ -1,15 +1,14 @@
 <template>
   <div id="app">
-    <navbar></navbar>
-    <router-view />
+    <timer></timer>
   </div>
 </template>
 
 <script>
-import Navbar from "@/components/Navbar";
+import Timer from "@/views/Timer";
 
 export default {
-  components: { Navbar }
+  components: { Timer }
 };
 </script>
 
