@@ -25,7 +25,7 @@
 export default {
   name: "Timer",
   props: ["start", "end", "trans"],
-  data: function() {
+  data: () => {
     return {
       timer: "",
       interval: "",
@@ -46,17 +46,16 @@ export default {
   },
   methods: {
     timerCount: function(start, end) {
-      var now = new Date().getTime();
+      const now = new Date().getTime();
 
-      var distance = start - now;
-      var passTime = end - now;
+      const distance = start - now;
+      const passTime = end - now;
 
       if (distance < 0 && passTime < 0) {
         this.message = this.trans.expired;
         this.statusType = "expired";
         this.statusText = this.trans.status.expired;
         clearInterval(this.interval);
-        return;
       } else if (distance < 0 && passTime > 0) {
         this.calcTime(passTime);
         this.message = this.trans.running;
